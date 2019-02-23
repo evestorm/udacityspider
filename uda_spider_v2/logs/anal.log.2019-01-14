@@ -1,0 +1,61 @@
+[ERROR] 2019-01-14 11:02:56,501 您操作太频繁,请稍后再访问
+[ERROR] 2019-01-14 11:04:32,597 您操作太频繁,请稍后再访问
+[ERROR] 2019-01-14 11:06:03,552 您操作太频繁,请稍后再访问
+[ERROR] 2019-01-14 11:08:27,505 您操作太频繁,请稍后再访问
+[ERROR] 2019-01-14 11:14:44,543 您操作太频繁,请稍后再访问
+[ERROR] 2019-01-14 11:16:52,189 您操作太频繁,请稍后再访问
+[ERROR] 2019-01-14 11:17:09,564 您操作太频繁,请稍后再访问
+[ERROR] 2019-01-14 11:21:20,576 您操作太频繁,请稍后再访问
+[WARNING] 2019-01-14 15:19:28,048 Error occurred during loading data. Trying to use cache server https://fake-useragent.herokuapp.com/browsers/0.1.11
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/lib/python3.6/urllib/request.py", line 1318, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "/Users/macbook/anaconda3/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Users/macbook/anaconda3/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Users/macbook/anaconda3/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Users/macbook/anaconda3/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Users/macbook/anaconda3/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/macbook/anaconda3/lib/python3.6/http/client.py", line 1392, in connect
+    super().connect()
+  File "/Users/macbook/anaconda3/lib/python3.6/http/client.py", line 936, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/Users/macbook/anaconda3/lib/python3.6/socket.py", line 724, in create_connection
+    raise err
+  File "/Users/macbook/anaconda3/lib/python3.6/socket.py", line 713, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/lib/python3.6/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/Users/macbook/anaconda3/lib/python3.6/urllib/request.py", line 223, in urlopen
+    return opener.open(url, data, timeout)
+  File "/Users/macbook/anaconda3/lib/python3.6/urllib/request.py", line 526, in open
+    response = self._open(req, data)
+  File "/Users/macbook/anaconda3/lib/python3.6/urllib/request.py", line 544, in _open
+    '_open', req)
+  File "/Users/macbook/anaconda3/lib/python3.6/urllib/request.py", line 504, in _call_chain
+    result = func(*args)
+  File "/Users/macbook/anaconda3/lib/python3.6/urllib/request.py", line 1361, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/Users/macbook/anaconda3/lib/python3.6/urllib/request.py", line 1320, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/lib/python3.6/site-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/Users/macbook/anaconda3/lib/python3.6/site-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/Users/macbook/anaconda3/lib/python3.6/site-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
