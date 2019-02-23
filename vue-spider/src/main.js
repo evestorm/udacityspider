@@ -3,8 +3,6 @@
 import 'element-ui/lib/theme-chalk/reset.css'
 import './styles/index.scss'
 
-// Vue.use(ElementUI, { size: 'medium' }) //新添加
-
 // import Vue from 'vue'
 import App from './App.vue'
 // import VueResource from 'vue-resource'

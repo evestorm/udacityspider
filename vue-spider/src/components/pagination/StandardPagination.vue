@@ -14,7 +14,6 @@
 </template>
 
 <script>
-// TODO: bug1：如果当前某个职位的page为25，切换职位后，页码还会是25，但若此职位没有25页，就会显示无数据
 export default {
     data() {
         return {
@@ -22,14 +21,9 @@ export default {
         };
     },
     mounted() {
-        // TODO: 当直接修改url地址设置page为其他值时，此处的curPage无法被修改
         this.curPage = this.currentPage
-        // console.log(this.curPage)
     },
     methods: {
-        // handleSizeChange(val) {
-        //     console.log(`每页 ${val} 条`);
-        // },
         handleCurrentChange(val) {
             console.log(`当前页: ${val}`);
             this.$emit('change-curPage', val)
@@ -55,9 +49,6 @@ export default {
             default: 1
         }
     }
-
-// vue 封装自定义组件
-// 链接：https://www.cnblogs.com/lanchar/p/6894167.html
 }
 </script>
 

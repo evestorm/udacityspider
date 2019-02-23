@@ -38,9 +38,7 @@ export default {
                                     },
                                     per: {
                                         color: '#eee',
-                                        // backgroundColor: '#334455',
-                                        padding: [2, 4],
-                                        // borderRadius: 2
+                                        padding: [2, 4]
                                     }
                                 }
                             },
@@ -52,15 +50,7 @@ export default {
                                 }
                             }
                         },
-                        data:[],
-                        // color: function () {
-                        //     return 'rgb(' + [
-                        //         Math.round(Math.random() * 31),
-                        //         Math.round(Math.random() * 180),
-                        //         Math.round(Math.random() * 226)
-                        //     ].join(',') + ')';
-                        //     // return 'rgb(31,160,246)'
-                        // }
+                        data:[]
                     }
                 ]
             }
@@ -75,7 +65,6 @@ export default {
     },
     mounted() {
         this.initChart();
-        // this.requestData();
     },
     methods: {
         initChart() {

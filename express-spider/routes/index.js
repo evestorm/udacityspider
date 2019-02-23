@@ -146,13 +146,10 @@ router.get('/jieba', function (req, res, next) {
     for (const desc of data) {
       sentence += desc.description
     }
-    // 取权重前500的词
+    // 取权重前100的词
     let result = nodejieba.extract(sentence, 100)
-    // 从TOP500中找出符合tagList的结果
-    // let tagList = ['HTML', '框架', 'JavaScript', 'CSS', '布局', 'H5', '混合开发', 'jquery', 'bootstrap', 'vue', 'angular', 'react', 'ajax', '响应式', 'CSS3', 'ES6', 'REST', 'node', 'zepto', 'mvc', 'mvvm', 'Babel', 'npm', 'webpack', 'gulp', "git", 'sass', 'scss', '优化', '动画', 'native', 'hybrid', 'python']
     let tagList = ['1.', '2.', '3.', '4.', '5.', '6.', '7.', '8.', '9.', '10.', '团队', '熟练掌握', '开发', '能力', '熟悉', '经验', '优先', '要求', '语言', '熟练', '参与', '任职', '相关', '良好', '负责', '具有', '文档', 'ing', 'My', '公司', '能够', '用户', '沟通', '领域', '数量掌握', '编程', '扎实', '了解', '推荐', '学习', '以上学历', '精通', '支持', '工作', '落地', '岗位', '岗位职责', '问题', '常用', '活动', '善于', '至少', '商汤']
     let filterResult = result.filter(item => tagList.indexOf(item.word) < 0)
-    // let filterResult = result
     res.json({
       msg: "操作成功",
       status: 200,
@@ -221,7 +218,6 @@ router.get('/otherinfo', async function (req, res, next) {
       job_list WHERE searchKeyWords = '${searchWords}'
       GROUP BY workYear`).then(data => {
     
-    // let filterResult = result
     res.json({
       msg: "操作成功",
       status: 200,

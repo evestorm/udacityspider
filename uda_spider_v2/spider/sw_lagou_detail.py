@@ -51,15 +51,6 @@ def query_Mysql(searchKeyWords):
     cursor = db.cursor()
 
     # SQL 查询语句
-    # TODO:断点续传（有时候请求到某个职位id后就卡死不动，下次得从此id后再开始请求）
-    # 可能的解决方案：https://www.cnblogs.com/niansi/p/7143736.html【不好使】
-    # 拿到拉勾的IP地址，前往 /etc 文件夹，修改hosts 指定拉勾域名的ip地址
-    # # lagou
-    # 17.50.39.99  https: // www.lagou.com
-    # TODO:能解决方案：https://www.cnblogs.com/gl1573/p/10129382.html
-    # 利用 requests 给我们封装好的重连机制
-    # s.mount('http://', HTTPAdapter(max_retries=3))
-
     sql = "SELECT positionId FROM job_list WHERE searchKeyWords LIKE '%" + \
         searchKeyWords + "%' AND positionId >= 5487969 ORDER BY positionId ASC"
     try:

@@ -4,7 +4,6 @@ var db = require("../config/db");
 const excelManger = require('../config/excelConfig')
 
 // 查询列表页
-// 分页实现参考链接：https://blog.csdn.net/zhuming3834/article/details/77184193
 router.get('/list', async function (req, res, next) {
     res.header("Content-Type", "application/json; charset=utf-8")
 
@@ -90,12 +89,6 @@ router.get('/list', async function (req, res, next) {
 });
 
 // 导出当前查询的数据为excel文件，返回文件地址
-// TODO: 文件过大时，会导致excel打开错误，删除了所有数据，待完善
-// ✅ 已解决上面问题，原因是 excelConfig 的 cols 中的数据类型必须与传递给它的
-// 对应数据相匹配。例如 positionId 为数字类型，则cols中的 positionId 也得是
-// 数字类型
-// TODO: 下方链接中提到后端node需要修改 connect-history-api-fallback ，未完成 
-// https://segmentfault.com/q/1010000015217989/a-1020000015218355
 router.get('/exportExcel', async function(req, res, next) {
     res.header("Content-Type", "application/json; charset=utf-8")
 

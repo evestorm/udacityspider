@@ -307,36 +307,6 @@ export default {
         'sw-pager': StandardPagination
     }
 }
-
-// const tableLabelMap = {
-//             id: 'ID',
-//             companyId: '公司ID',
-//             workYear: '工作经验',
-//             education: '教育程度',
-//             jobNature: '工作性质',
-//             positionName: '岗位名称',
-//             positionId: '岗位ID',
-//             createTime: '发布时间',
-//             city: '城市',
-//             companyLogo: '公司LOGO',
-//             industryField: '工业领域',
-//             positionAdvantage: '岗位优势',
-//             salary: '薪资',
-//             companySize: '公司规模',
-//             companyShortName: '公司简称',
-//             positionLables: '岗位标签',
-//             financeStage: '融资阶段',
-//             companyLabelList: '公司标签',
-//             longitude: '经度',
-//             latitude: '纬度',
-//             companyFullName: '公司全称',
-//             firstType: '一级分类',
-//             secondType: '二级分类',
-//             isSchoolJob: '是否实习',
-//             thirdType: '三级分类',
-//             skillLables: '技能标签',
-//             searchKeyWords: '搜索关键词'
-//         }
 </script>
 
 <style lang="scss">

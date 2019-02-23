@@ -10,10 +10,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
-  // 关于webpack的path和publicPath https://www.cnblogs.com/gaomingchao/p/6911762.html
   output: {
-    path: path.resolve(__dirname, 'dist'), // 所有输出文件的目标路径;
-    publicPath: '', // 输出解析文件的目录，url 相对于 HTML 页面
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '',
     filename: '[name].bundle.js',
     chunkFilename: '[id].chunk.js',
   },
@@ -117,12 +116,6 @@ module.exports = {
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
-  // module.exports.output = {
-  //   path: path.resolve(__dirname, './dist'),
-  //   publicPath: '/dist/',
-  //   filename: '[name].[hash].js',
-  // },
-  // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
